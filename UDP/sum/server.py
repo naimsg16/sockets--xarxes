@@ -1,10 +1,9 @@
 import socket
 import time
 
-
 serv = socket.socket(
     family=socket.AddressFamily.AF_INET,
-    type=socket.SocketKind.SOCK_DGRAM,   
+    type=socket.SocketKind.SOCK_DGRAM,      # UDP -> DGRAM 
 )
 
 serv.bind(("localhost",4320))

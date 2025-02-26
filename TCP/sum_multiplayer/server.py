@@ -3,12 +3,11 @@ import time
 
 serv = socket.socket(
     family=socket.AddressFamily.AF_INET,
-    type=socket.SocketKind.SOCK_STREAM,   
+    type=socket.SocketKind.SOCK_STREAM,     # TCP -> STREAM 
 )
 
 serv.bind(("localhost",4320))
 serv.listen(2)
-time.sleep(15)
 
 
 sum = 0
@@ -21,8 +20,9 @@ while True:
     operators += 1
     if operators == 2:
         print(f"The sum is {sum}")
-        serv.close()
         break
 
+newsock.close()
+serv.close()
 
         

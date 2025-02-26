@@ -1,20 +1,20 @@
 import socket
-import time
+
+serv_address = ("localhost",4320)
 
 cli = socket.socket(
     family=socket.AddressFamily.AF_INET,
-    type=socket.SocketKind.SOCK_DGRAM,   
+    type=socket.SocketKind.SOCK_DGRAM,              # UDP -> DGRAM
 )
-# UDP = DGRAM, TCP = STREAM
 
-cli.bind(("localhost",4222)) # se puede ignorar
+cli.bind(("localhost",4222))
 
-number = int(input('Enter a number to sum: '))
+number = int(input('Enter a number: '))             
 
 while True:
-    cli.sendto(int.to_bytes(number),("localhost",4320)) 
+    cli.sendto(int.to_bytes(number),serv_address) 
     if number == 0:
         break
-    number = int(input('Enter a number to sum: '))
+    number = int(input('Enter a number: '))
 
 cli.close()

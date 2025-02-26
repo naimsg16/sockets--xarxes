@@ -1,14 +1,15 @@
 import socket
 import time
 
+serv_address = ("localhost",4320)
+
 cli = socket.socket(
     family=socket.AddressFamily.AF_INET,
-    type=socket.SocketKind.SOCK_DGRAM,   
+    type=socket.SocketKind.SOCK_DGRAM,      # UDP -> DGRAM 
 )
-# UDP = DGRAM, TCP = STREAM
 
-cli.bind(("localhost",4223)) # se puede ignorar
+cli.bind(("localhost",4223))
 time.sleep(5)
 
-cli.sendto(int.to_bytes(5),("localhost",4320)) 
+cli.sendto(int.to_bytes(8),serv_address) 
 cli.close()
