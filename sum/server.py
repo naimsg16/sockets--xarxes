@@ -8,7 +8,6 @@ serv = socket.socket(
 )
 
 serv.bind(("localhost",4320))
-#serv.listen(2)
 time.sleep(10)
 sum = 0
 while True:

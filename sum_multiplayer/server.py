@@ -1,14 +1,12 @@
 import socket
 import time
 
-
 serv = socket.socket(
     family=socket.AddressFamily.AF_INET,
     type=socket.SocketKind.SOCK_DGRAM,   
 )
 
 serv.bind(("localhost",4320))
-#serv.listen(2)
 time.sleep(10)
 sum = 0
 operators = 0

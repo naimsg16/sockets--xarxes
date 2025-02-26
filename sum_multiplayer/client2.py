@@ -8,7 +8,7 @@ cli = socket.socket(
 # UDP = DGRAM, TCP = STREAM
 
 cli.bind(("localhost",4223)) # se puede ignorar
-time.sleep(6)
+time.sleep(5)
 
 cli.sendto(int.to_bytes(5),("localhost",4320)) 
 cli.close()
